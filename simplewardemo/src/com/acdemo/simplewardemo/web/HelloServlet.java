@@ -1,6 +1,8 @@
 package com.acdemo.simplewardemo.web;
 
 import java.io.IOException;
+import java.util.Calendar;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,7 +50,13 @@ public class HelloServlet extends HttpServlet {
 			name="Incognito";
 		}
 		
+		String yob = request.getParameter("yearOfBirthField");
+		Calendar cal = Calendar.getInstance();
+		int currYear = cal.get(Calendar.YEAR);
+		int age = currYear - Integer.valueOf(yob);
+		
 		response.getWriter().append("<h1>Hello there "+name+"!</h1>");
+		response.getWriter().append("<h1>Based on your year of birth, you are "+age+" years old</h1>");
 		
 		doGet(request, response);
 	}
