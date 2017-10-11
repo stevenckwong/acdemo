@@ -28,9 +28,12 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("<H1>Hello World Servlet</H1>");
-		response.getWriter().append("<H2>This is a simple web application</H2>");
-		response.getWriter().append("<H3>to show that it can work</H3>");
-		response.getWriter().append("<H4>Are you happy now?</H4>");
+		
+		// Commented these out as the manager didn't like it...
+		
+//		response.getWriter().append("<H2>This is a simple web application</H2>");
+//		response.getWriter().append("<H3>to show that it can work</H3>");
+//		response.getWriter().append("<H4>Are you happy now?</H4>");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
