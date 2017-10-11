@@ -27,11 +27,9 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("<H1>Hello World Servlet</H1>");
+//		response.getWriter().append("<H1>Hello World Servlet</H1>");
 		
-		// Commented these out as the manager didn't like it...
-		
-//		response.getWriter().append("<H2>This is a simple web application</H2>");
+		response.getWriter().append("<H2>It is nice of you to drop by...</H2>");
 //		response.getWriter().append("<H3>to show that it can work</H3>");
 //		response.getWriter().append("<H4>Are you happy now?</H4>");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -42,6 +40,16 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		String name = request.getParameter("nameField");
+		
+		if (name.equals(""))
+		{
+			name="Incognito";
+		}
+		
+		response.getWriter().append("<h1>Hello there "+name+"!</h1>");
+		
 		doGet(request, response);
 	}
 
