@@ -55,6 +55,10 @@ public class HelloServlet extends HttpServlet {
 		int currYear = cal.get(Calendar.YEAR);
 		int age = currYear - Integer.valueOf(yob);
 		
+		// added the banner
+		response.getWriter().append("<img src=\"img/hero-agile-solutions.jpg\" />");
+		
+		
 		response.getWriter().append("<h1>Hello there "+name+"!</h1>");
 		response.getWriter().append("<h1>Based on your year of birth, you are "+age+" years old</h1>");
 
