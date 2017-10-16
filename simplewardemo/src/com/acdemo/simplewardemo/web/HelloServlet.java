@@ -58,26 +58,6 @@ public class HelloServlet extends HttpServlet {
 		response.getWriter().append("<h1>Hello there "+name+"!</h1>");
 		response.getWriter().append("<h1>Based on your year of birth, you are "+age+" years old</h1>");
 		
-		// added code to add more functionality here
-		String origin = request.getParameter("originCountryField");
-		if (origin != null) {
-			response.getWriter().append("<h1>Welcome to Australia. I hope you find it nicer here than " + origin + "</h1>");
-		} else {
-			response.getWriter().append("<form method=\"POST\" action=\"HelloServlet\">");
-
-			response.getWriter().append("<input type=\"hidden\" name=\"nameField\" value=\"" + name + ("\" /><br>"));
-			response.getWriter().append("<input type=\"hidden\" name=\"yearOfBirthField\" value=\"" + yob + ("\" /><br>"));
-			
-			response.getWriter().append("Where do you hail from? ");
-			response.getWriter().append("<input type=\"text\" name=\"originCountryField\" maxLength=30 /><br><br>");
-			
-			response.getWriter().append("<input type=submit name=submitBtn />");
-			response.getWriter().append("</form>");
-			
-		}
-		
-		
-		
 		doGet(request, response);
 	}
 
