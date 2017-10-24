@@ -57,7 +57,9 @@ public class LoginGetNameServlet extends HttpServlet {
 		
 		String result = rally.getClient().doGet(queryURL);
 
-		String displayName = parseResultForDisplayName(result);
+		MyUtility myUtil = new MyUtility();
+		
+		String displayName = myUtil.parseResultForDisplayName(result);
 		
 		rally.close();
 		
@@ -67,14 +69,6 @@ public class LoginGetNameServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private String parseResultForDisplayName(String result) {
-		int startIndex = result.indexOf("\"_refObjectName\": \"");
-		startIndex+=19;
-		
-		int endIndex = result.indexOf("\"", startIndex);
-		
-		String displayName = result.substring(startIndex, endIndex);
-		return displayName;
-	}
+
 
 }
