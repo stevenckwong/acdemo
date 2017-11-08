@@ -11,7 +11,7 @@ public class JenkinsBuildJavaClass {
 		// JenkinsBuildJavaClass2 utility = new JenkinsBuildJavaClass2();
 		// String someValueFromUtility = utility.getMeSomeValue();
 		
-		String someValueFromUtility = "Hello World Fail!");
+		String someValueFromUtility = "Hello World Fail!";
 		System.out.println(someValueFromUtility);
 		System.out.println("This java class is for testing the Jenkins build integration");
 	}
