@@ -14,6 +14,8 @@ public class JenkinsBuildJavaClass {
 		String someValueFromUtility = "Hello World Fail!";
 		System.out.println(someValueFromUtility);
 		System.out.println("This java class is for testing the Jenkins build integration");
+		
+		Something Fail;
 	}
 	
 
